@@ -57,6 +57,10 @@ class progress_bar_manual():
             bar = colored('〘','green') + colored('█','green')*round((percentage*(self.bar_length/(100/self.bar_length))/self.bar_length)) + "-" * (round(self.bar_length-percentage*(self.bar_length/(100/self.bar_length))/self.bar_length)) # god pleaseh elp me i dont know what this math is oh my god ??? wtf is this what how why what
             sys.stdout.write(f"{bar}{bar_percentage} \r")
             sys.stdout.flush()
+    
+    def close(self):
+        print('')
+        
 
 
 class animation():
