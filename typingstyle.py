@@ -22,7 +22,7 @@ def displaytext(text, borderchar="-", custom_border_length=0):
     
     for x in range(len(textarray)):
         textarray[x].replace('\n', '')
-        textarray[x] += ' ' * (charcount-len(textarray[x])); textarray[x] += '|';
+        textarray[x] += ' ' * (charcount-len(textarray[x]) - 1); textarray[x] += '|';
         
     
     output += (borderchar * charcount + "\n")
