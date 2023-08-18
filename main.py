@@ -1,7 +1,15 @@
-import requests
+import requests, sys, art
 from progress_bar import *
+from typingstyle import *
 
-file_url = ""
+sys.stdout.write(art.text2art("Downloader"))
+print(displaytext("1. Download from URL\n2. Settings\n3. EXIT"))
+
+
+
+
+
+file_url = input('URL: ')
 
 #request data
 r = requests.get(file_url, stream=True)
