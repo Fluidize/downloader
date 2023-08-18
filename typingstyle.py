@@ -16,7 +16,7 @@ def displaytext(text, borderchar="-", custom_border_length=0):
     for x in range(len(textarray)):
         if len(textarray[x]) > charcount:
             charcount = len(textarray[x])
-        textarray[x] = '|' + textarray[x]
+        textarray[x] = '| ' + textarray[x]
 
     output = ""; charcount += 1
     

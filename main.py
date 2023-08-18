@@ -2,7 +2,7 @@ import requests, sys, art
 from progress_bar import *
 from typingstyle import *
 
-sys.stdout.write(art.text2art("Downloader"))
+sys.stdout.write(colored(art.text2art("Downloader"),'blue'))
 print(displaytext("1. Download from URL\n2. Settings\n3. EXIT", custom_border_length=65))
 
 
@@ -24,14 +24,15 @@ while True:
 
 
 
+		try:
+			progress_bar = progress_bar_manual(total_size_in_bytes)
+			with open(file_name, "wb") as file:
 
-
-		progress_bar = progress_bar_manual(total_size_in_bytes)
-		with open(file_name, "wb") as file:
-
-			for chunk in r.iter_content(block_size):
-				if chunk:
-					file.write(chunk)
-					progress_bar.update(len(chunk))
-		progress_bar.close()
+				for chunk in r.iter_content(block_size):
+					if chunk:
+						file.write(chunk)
+						progress_bar.update(len(chunk))
+			progress_bar.close()
+		except StopIteration:
+			print(colored('Size Header Not Given', 'yellow'))
 			
