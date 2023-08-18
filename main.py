@@ -3,7 +3,7 @@ from progress_bar import *
 from typingstyle import *
 
 sys.stdout.write(art.text2art("Downloader"))
-print(displaytext("1. Download from URL\n2. Settings\n3. EXIT"))
+print(displaytext("1. Download from URL\n2. Settings\n3. EXIT", custom_border_length=65))
 
 
 
